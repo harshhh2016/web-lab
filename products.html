@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shop Gifts | HeartStrings</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+  <!-- LEFT : BRAND -->
+  <div class="nav-left">
+    <h1>HeartStrings</h1>
+  </div>
+
+  <!-- CENTER : SEARCH -->
+  <div class="nav-center">
+    <input
+      type="text"
+      placeholder="Search gifts, emotions, occasions..."
+      onkeyup="searchProducts(this.value)">
+  </div>
+
+  <!-- RIGHT : MENU + CART -->
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Shop</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+
+    <a href="cart.html" class="cart-icon">
+      🛒 <span id="cartCount">0</span>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ================= PAGE INTRO ================= -->
+<section>
+  <h2 class="section-title">Our Gift Collections</h2>
+  <p class="section-subtitle">
+    Explore our thoughtfully curated collections designed to express emotions,
+    celebrate moments, and create lasting memories.
+  </p>
+</section>
+
+<!-- ================================================= -->
+<!-- 🎂 BIRTHDAY GIFTS -->
+<!-- ================================================= -->
+<section>
+<h2 class="section-title">🎂 Birthday Gifts</h2>
+
+<div class="products">
+
+<!-- PRODUCT 1 -->
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f" alt="Birthday Gift Box">
+<h4>Birthday Celebration Box</h4>
+<p>
+A joyful gift box filled with treats, greeting cards, and surprises
+to make birthdays feel truly special.
+</p>
+<p class="price">₹999</p>
+
+<button onclick="addProduct(this,'Birthday Celebration Box',999)">
+Add to Cart
+</button>
+
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Birthday Celebration Box',999)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Birthday Celebration Box',999)">+</button>
+</div>
+</div>
+
+<!-- PRODUCT 2 -->
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52" alt="Chocolate Gift Box">
+<h4>Chocolate Gift Hamper</h4>
+<p>
+A premium assortment of chocolates beautifully packed for sweet
+birthday celebrations.
+</p>
+<p class="price">₹799</p>
+
+<button onclick="addProduct(this,'Chocolate Gift Hamper',799)">
+Add to Cart
+</button>
+
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Chocolate Gift Hamper',799)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Chocolate Gift Hamper',799)">+</button>
+</div>
+</div>
+
+<!-- PRODUCT 3 -->
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c" alt="Teddy Bear Gift">
+<h4>Cute Teddy Bear</h4>
+<p>
+A soft plush teddy designed to express warmth, comfort, and affection
+on special occasions.
+</p>
+<p class="price">₹599</p>
+
+<button onclick="addProduct(this,'Cute Teddy Bear',599)">
+Add to Cart
+</button>
+
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Cute Teddy Bear',599)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Cute Teddy Bear',599)">+</button>
+</div>
+</div>
+
+<!-- PRODUCT 4 -->
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1528756514091-dee5ecaa3278" alt="Birthday Mug">
+<h4>Birthday Coffee Mug</h4>
+<p>
+A ceramic mug with cheerful birthday typography — perfect for daily
+coffee moments.
+</p>
+<p class="price">₹349</p>
+
+<button onclick="addProduct(this,'Birthday Coffee Mug',349)">
+Add to Cart
+</button>
+
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Birthday Coffee Mug',349)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Birthday Coffee Mug',349)">+</button>
+</div>
+</div>
+
+<!-- PRODUCT 5 -->
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf" alt="Birthday Balloon Set">
+<h4>Balloon Decoration Kit</h4>
+<p>
+A colorful balloon decoration set to instantly transform any birthday
+space into a celebration.
+</p>
+<p class="price">₹499</p>
+
+<button onclick="addProduct(this,'Balloon Decoration Kit',499)">
+Add to Cart
+</button>
+
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Balloon Decoration Kit',499)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Balloon Decoration Kit',499)">+</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ================================================= -->
+<!-- 💖 ROMANTIC GIFTS -->
+<!-- ================================================= -->
+<section>
+<h2 class="section-title">💖 Romantic Gifts</h2>
+
+<div class="products">
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659" alt="Love Message Bottle">
+<h4>Love Message Bottle</h4>
+<p>
+A decorative glass bottle filled with heartfelt love notes for your
+special someone.
+</p>
+<p class="price">₹699</p>
+
+<button onclick="addProduct(this,'Love Message Bottle',699)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Love Message Bottle',699)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Love Message Bottle',699)">+</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1616627987039-3f47f3a6a90c" alt="Heart Cushion">
+<h4>Heart Cushion</h4>
+<p>
+A soft heart-shaped cushion designed to add warmth and romance to any
+space.
+</p>
+<p class="price">₹899</p>
+
+<button onclick="addProduct(this,'Heart Cushion',899)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Heart Cushion',899)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Heart Cushion',899)">+</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1526045478516-99145907023c" alt="Rose Box">
+<h4>Preserved Rose Box</h4>
+<p>
+A luxury preserved rose box symbolizing timeless love and lasting
+memories.
+</p>
+<p class="price">₹1199</p>
+
+<button onclick="addProduct(this,'Preserved Rose Box',1199)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Preserved Rose Box',1199)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Preserved Rose Box',1199)">+</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" alt="Couple Bracelets">
+<h4>Couple Bracelets</h4>
+<p>
+Matching bracelets representing connection, commitment, and shared
+memories.
+</p>
+<p class="price">₹499</p>
+
+<button onclick="addProduct(this,'Couple Bracelets',499)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Couple Bracelets',499)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Couple Bracelets',499)">+</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Photo Frame">
+<h4>Love Photo Frame</h4>
+<p>
+A beautifully designed frame to showcase your favorite memories
+together.
+</p>
+<p class="price">₹799</p>
+
+<button onclick="addProduct(this,'Love Photo Frame',799)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Love Photo Frame',799)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Love Photo Frame',799)">+</button>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- ================================================= -->
+<!-- 🏡 HOME DÉCOR GIFTS -->
+<!-- ================================================= -->
+<section>
+<h2 class="section-title">🏡 Home Décor Gifts</h2>
+
+<div class="products">
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1602872029708-84c4e7b2b3f1" alt="Scented Candle Set">
+<h4>Scented Candle Set</h4>
+<p>
+A calming set of aromatic candles designed to create a cozy,
+peaceful, and relaxing atmosphere in any home.
+</p>
+<p class="price">₹699</p>
+<button onclick="addProduct(this,'Scented Candle Set',699)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Scented Candle Set',699)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Scented Candle Set',699)">+</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1543248939-4296e1fea89b" alt="Fairy Light Jar">
+<h4>Fairy Light Jar</h4>
+<p>
+A glass jar filled with warm fairy lights that adds a dreamy
+glow to bedrooms and living spaces.
+</p>
+<p class="price">₹599</p>
+<button onclick="addProduct(this,'Fairy Light Jar',599)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Fairy Light Jar',599)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Fairy Light Jar',599)">+</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4" alt="Minimal Wall Art">
+<h4>Minimal Wall Art</h4>
+<p>
+Elegant modern wall art that enhances interiors with subtle
+style and visual harmony.
+</p>
+<p class="price">₹899</p>
+<button onclick="addProduct(this,'Minimal Wall Art',899)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Minimal Wall Art',899)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Minimal Wall Art',899)">+</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f" alt="Ceramic Vase">
+<h4>Ceramic Flower Vase</h4>
+<p>
+A handcrafted ceramic vase that adds charm and sophistication
+to tables and shelves.
+</p>
+<p class="price">₹1099</p>
+<button onclick="addProduct(this,'Ceramic Flower Vase',1099)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Ceramic Flower Vase',1099)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Ceramic Flower Vase',1099)">+</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" alt="Table Lamp">
+<h4>Decorative Table Lamp</h4>
+<p>
+A stylish table lamp providing warm lighting perfect for
+relaxed evenings and reading corners.
+</p>
+<p class="price">₹1299</p>
+<button onclick="addProduct(this,'Decorative Table Lamp',1299)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Decorative Table Lamp',1299)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Decorative Table Lamp',1299)">+</button>
+</div>
+</div>
+
+</div>
+</section>
+<!-- ================================================= -->
+<!-- ✍️ PERSONALIZED GIFTS -->
+<!-- ================================================= -->
+<section>
+<h2 class="section-title">✍️ Personalized Gifts</h2>
+
+<div class="products">
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1585386959984-a41552231691" alt="Name Mug">
+<h4>Personalized Name Mug</h4>
+<p>
+A custom ceramic mug printed with a name or message,
+perfect for everyday use.
+</p>
+<p class="price">₹399</p>
+<button onclick="addProduct(this,'Personalized Name Mug',399)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Personalized Name Mug',399)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Personalized Name Mug',399)">+</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1616627987039-3f47f3a6a90c" alt="Custom Cushion">
+<h4>Custom Photo Cushion</h4>
+<p>
+A soft cushion printed with your favorite photo,
+turning memories into comfort.
+</p>
+<p class="price">₹899</p>
+<button onclick="addProduct(this,'Custom Photo Cushion',899)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Custom Photo Cushion',899)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Custom Photo Cushion',899)">+</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Custom Frame">
+<h4>Personalized Photo Frame</h4>
+<p>
+A customized photo frame engraved with names or dates,
+perfect for special memories.
+</p>
+<p class="price">₹799</p>
+<button onclick="addProduct(this,'Personalized Photo Frame',799)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Personalized Photo Frame',799)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Personalized Photo Frame',799)">+</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" alt="Engraved Keychain">
+<h4>Engraved Keychain</h4>
+<p>
+A sleek metal keychain engraved with initials or a short
+message for daily use.
+</p>
+<p class="price">₹299</p>
+<button onclick="addProduct(this,'Engraved Keychain',299)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Engraved Keychain',299)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Engraved Keychain',299)">+</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf" alt="Custom Gift Box">
+<h4>Customized Memory Box</h4>
+<p>
+A personalized gift box designed to store letters, photos,
+and cherished keepsakes.
+</p>
+<p class="price">₹1199</p>
+<button onclick="addProduct(this,'Customized Memory Box',1199)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Customized Memory Box',1199)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Customized Memory Box',1199)">+</button>
+</div>
+</div>
+
+</div>
+</section>
+<!-- ================================================= -->
+<!-- 🌿 WELLNESS & SELF-CARE GIFTS -->
+<!-- ================================================= -->
+<section>
+<h2 class="section-title">🌿 Wellness & Self-Care</h2>
+
+<div class="products">
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" alt="Essential Oil Set">
+<h4>Essential Oil Set</h4>
+<p>
+A calming set of essential oils designed for relaxation,
+stress relief, and mindfulness.
+</p>
+<p class="price">₹899</p>
+<button onclick="addProduct(this,'Essential Oil Set',899)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Essential Oil Set',899)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Essential Oil Set',899)">+</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1585386959984-a41552231691" alt="Herbal Tea Kit">
+<h4>Herbal Tea Gift Kit</h4>
+<p>
+A soothing collection of herbal teas curated for relaxation
+and wellness.
+</p>
+<p class="price">₹699</p>
+<button onclick="addProduct(this,'Herbal Tea Gift Kit',699)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Herbal Tea Gift Kit',699)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Herbal Tea Gift Kit',699)">+</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1602872029708-84c4e7b2b3f1" alt="Bath Spa Set">
+<h4>Luxury Bath Spa Set</h4>
+<p>
+A complete self-care spa kit with bath salts, scrubs,
+and aromatherapy essentials.
+</p>
+<p class="price">₹1299</p>
+<button onclick="addProduct(this,'Luxury Bath Spa Set',1299)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Luxury Bath Spa Set',1299)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Luxury Bath Spa Set',1299)">+</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f" alt="Yoga Mat">
+<h4>Eco Yoga Mat</h4>
+<p>
+An eco-friendly yoga mat designed for comfort, grip,
+and mindful practice.
+</p>
+<p class="price">₹999</p>
+<button onclick="addProduct(this,'Eco Yoga Mat',999)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Eco Yoga Mat',999)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Eco Yoga Mat',999)">+</button>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1543248939-4296e1fea89b" alt="Aroma Diffuser">
+<h4>Aroma Diffuser</h4>
+<p>
+A modern aroma diffuser that spreads calming fragrances
+and enhances relaxation.
+</p>
+<p class="price">₹1499</p>
+<button onclick="addProduct(this,'Aroma Diffuser',1499)">Add to Cart</button>
+<div class="qty-controls" style="display:none;">
+<button onclick="changeQty(this,-1,'Aroma Diffuser',1499)">−</button>
+<span>1</span>
+<button onclick="changeQty(this,1,'Aroma Diffuser',1499)">+</button>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+<p><strong>HeartStrings</strong> © 2025</p>
+<p>Where every gift speaks your feelings.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us | HeartStrings</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+  <!-- LEFT : BRAND -->
+  <div class="nav-left">
+    <h1>HeartStrings</h1>
+  </div>
+
+  <!-- CENTER : SEARCH -->
+  <div class="nav-center">
+    <input
+      type="text"
+      placeholder="Search gifts, emotions, occasions..."
+      onkeyup="searchProducts(this.value)">
+  </div>
+
+  <!-- RIGHT : MENU + CART -->
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Shop</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+
+    <a href="cart.html" class="cart-icon">
+      🛒 <span id="cartCount">0</span>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ================= PAGE HEADER ================= -->
+<section>
+  <h2 class="section-title">Get in Touch</h2>
+  <p class="section-subtitle">
+    We’re always happy to hear from you. Whether you have a question,
+    need help choosing a gift, or want to share your thoughts —
+    our team is here to help.
+  </p>
+</section>
+
+<!-- ================= CONTACT DETAILS ================= -->
+<section>
+  <div class="features">
+
+    <div class="feature">
+      <h3>📍 Our Address</h3>
+      <p>
+        HeartStrings Pvt. Ltd.<br>
+        Blossom Plaza, 3rd Floor<br>
+        Indiranagar, Bengaluru<br>
+        Karnataka – 560038
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>📞 Contact Information</h3>
+      <p>
+        Phone: +91 98765 43210<br>
+        Email: support@heartstrings.com<br><br>
+        Our support team responds within 24 hours on working days.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>🕒 Working Hours</h3>
+      <p>
+        Monday – Saturday<br>
+        9:00 AM – 8:00 PM<br><br>
+        Closed on Sundays and public holidays.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CONTACT FORM ================= -->
+<section>
+  <h2 class="section-title">Send Us a Message</h2>
+  <p class="section-subtitle">
+    Fill out the form below and we’ll get back to you as soon as possible.
+    This form is for communication purposes only.
+  </p>
+
+  <form>
+    <input type="text" placeholder="Your Full Name" required>
+    <input type="email" placeholder="Your Email Address" required>
+    <input type="text" placeholder="Subject">
+    <textarea rows="5" placeholder="Write your message here..." required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <p><strong>HeartStrings</strong> © 2025</p>
+  <p>Where every gift speaks your feelings.</p>
+</footer>
+
+</body>
+</html>

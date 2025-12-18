@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout | Dreamy Gifts</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+  <!-- LEFT : BRAND -->
+  <div class="nav-left">
+    <h1>HeartStrings</h1>
+  </div>
+
+  <!-- CENTER : SEARCH -->
+  <div class="nav-center">
+    <input
+      type="text"
+      placeholder="Search gifts, emotions, occasions..."
+      onkeyup="searchProducts(this.value)">
+  </div>
+
+  <!-- RIGHT : MENU + CART -->
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Shop</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+
+    <a href="cart.html" class="cart-icon">
+      🛒 <span id="cartCount">0</span>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ================= CHECKOUT HEADER ================= -->
+<section>
+    <h2 class="section-title">Checkout</h2>
+    <p class="section-subtitle">
+        You’re just one step away from making someone’s day special.
+        Please review the details below and confirm your order.
+    </p>
+</section>
+
+<!-- ================= ORDER SUMMARY ================= -->
+<section>
+    <div class="cart-box">
+        <h3>Order Summary</h3>
+        <p>
+            Your selected gifts will be carefully packed and prepared
+            for delivery. Once you place the order, the cart will be
+            cleared automatically.
+        </p>
+
+        <ul style="margin:20px 0; padding-left:20px; line-height:1.8;">
+            <li>All items are quality-checked before dispatch</li>
+            <li>Packaging is done with care and premium materials</li>
+            <li>Estimated delivery within 4–6 business days</li>
+        </ul>
+
+        <hr style="margin:30px 0;">
+
+        <h3>Delivery Information</h3>
+        <p>
+            This is a demo checkout page for an academic project.
+            No real payment or delivery will occur.
+        </p>
+
+        <div style="margin-top:40px; text-align:right;">
+            <button onclick="clearCart()">
+                Place Order
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- ================= THANK YOU NOTE ================= -->
+<section>
+    <h2 class="section-title">Thank You for Choosing Dreamy Gifts</h2>
+    <p class="section-subtitle">
+        We hope our gifts help you express emotions beautifully.
+        We look forward to serving you again.
+    </p>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer style="background:#fff; padding:40px; text-align:center; margin-top:60px;">
+    <p><strong>Dreamy Gifts</strong> © 2025</p>
+    <p>
+        Thoughtful gifting for every emotion.<br>
+        support@dreamygifts.com | +91 98765 43210
+    </p>
+</footer>
+
+</body>
+</html>

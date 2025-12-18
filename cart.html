@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart | Dreamy Gifts</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body onload="loadCart()">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+  <!-- LEFT : BRAND -->
+  <div class="nav-left">
+    <h1>HeartStrings</h1>
+  </div>
+
+  <!-- CENTER : SEARCH -->
+  <div class="nav-center">
+    <input
+      type="text"
+      placeholder="Search gifts, emotions, occasions..."
+      onkeyup="searchProducts(this.value)">
+  </div>
+
+  <!-- RIGHT : MENU + CART -->
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Shop</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+
+    <a href="cart.html" class="cart-icon">
+      🛒 <span id="cartCount">0</span>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ================= PAGE HEADER ================= -->
+<section>
+    <h2 class="section-title">Your Shopping Cart</h2>
+    <p class="section-subtitle">
+        Review the items you’ve added. You can proceed to checkout
+        when you’re ready.
+    </p>
+</section>
+
+<!-- ================= CART CONTENT ================= -->
+<section>
+    <div class="cart-box">
+
+        <!-- Empty cart message -->
+        <div id="emptyCartMessage" style="display:none; text-align:center;">
+            <h3>Your cart is empty</h3>
+            <p>
+                Looks like you haven’t added anything yet.
+                Explore our collections and find something special.
+            </p>
+            <a href="products.html" class="primary-btn">Browse Gifts</a>
+
+        </div>
+
+        <!-- Cart items -->
+        <section>
+  <h2 class="section-title">Your Cart</h2>
+
+  <div id="emptyCartMessage" style="text-align:center; display:none;">
+    <p>Your cart is empty. Start adding gifts you love 💖</p>
+  </div>
+
+  <div id="cartContent" class="cart-box">
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+      Total Amount: ₹<span id="total">0</span>
+    </div>
+
+    <button class="checkout-btn" onclick="clearCart()">
+      Proceed to Checkout
+    </button>
+  </div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer style="background:#fff; padding:40px; text-align:center; margin-top:60px;">
+    <p><strong>Dreamy Gifts</strong> © 2025</p>
+    <p>
+        Thoughtful gifting for every emotion.<br>
+        support@dreamygifts.com | +91 98765 43210
+    </p>
+</footer>
+
+</body>
+</html>

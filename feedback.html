@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Feedback | HeartStrings</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+  <!-- LEFT : BRAND -->
+  <div class="nav-left">
+    <h1>HeartStrings</h1>
+  </div>
+
+  <!-- CENTER : SEARCH -->
+  <div class="nav-center">
+    <input
+      type="text"
+      placeholder="Search gifts, emotions, occasions..."
+      onkeyup="searchProducts(this.value)">
+  </div>
+
+  <!-- RIGHT : MENU + CART -->
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Shop</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+
+    <a href="cart.html" class="cart-icon">
+      🛒 <span id="cartCount">0</span>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ================= PAGE HEADER ================= -->
+<section>
+  <h2 class="section-title">We Value Your Feedback</h2>
+  <p class="section-subtitle">
+    Your experience with HeartStrings matters to us.
+    Every message you share helps us improve our products,
+    services, and overall gifting experience.
+  </p>
+</section>
+
+<!-- ================= FEEDBACK INFO ================= -->
+<section>
+  <div class="features">
+
+    <div class="feature">
+      <h3>Why Your Feedback Matters</h3>
+      <p>
+        Feedback allows us to understand what we are doing well
+        and where we can improve. It helps us refine our collections,
+        improve usability, and deliver better gifting experiences.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>How We Use Your Feedback</h3>
+      <p>
+        All feedback submitted here is securely stored and reviewed
+        by our internal team. Suggestions are discussed during
+        regular evaluations and are used to enhance our services.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>Your Privacy</h3>
+      <p>
+        Your information is used only for internal analysis.
+        We respect your privacy and never share your details
+        without your consent.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FEEDBACK FORM ================= -->
+<section>
+  <h2 class="section-title">Share Your Experience</h2>
+  <p class="section-subtitle">
+    Please take a moment to tell us about your experience.
+    Your honest feedback helps us grow and serve you better.
+  </p>
+
+  <form onsubmit="saveFeedback(event)">
+    <input
+      type="text"
+      id="name"
+      placeholder="Your Full Name"
+      required>
+
+    <input
+      type="email"
+      id="email"
+      placeholder="Your Email Address"
+      required>
+
+    <textarea
+      id="message"
+      rows="5"
+      placeholder="Write your feedback here..."
+      required></textarea>
+
+    <button type="submit">Submit Feedback</button>
+  </form>
+</section>
+
+<!-- ================= CLOSING NOTE ================= -->
+<section>
+  <h2 class="section-title">Thank You for Helping Us Improve</h2>
+  <p class="section-subtitle">
+    We truly appreciate you taking the time to share your thoughts.
+    Every response helps HeartStrings become better for everyone.
+  </p>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <p><strong>HeartStrings</strong> © 2025</p>
+  <p>Where every gift speaks your feelings.</p>
+</footer>
+
+</body>
+</html>
