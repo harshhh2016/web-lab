@@ -91,7 +91,7 @@
     Your honest feedback helps us grow and serve you better.
   </p>
 
-  <form onsubmit="saveFeedback(event)">
+  <form id="feedbackForm" onsubmit="return validateFeedback()">
     <input
       type="text"
       id="name"
@@ -103,6 +103,12 @@
       id="email"
       placeholder="Your Email Address"
       required>
+    <input
+  type="text"
+  id="phone"
+  placeholder="Mobile Number"
+  required>
+
 
     <textarea
       id="message"
