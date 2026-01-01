@@ -19,9 +19,10 @@
   <!-- CENTER : SEARCH -->
   <div class="nav-center">
     <input
-      type="text"
-      placeholder="Search gifts, emotions, occasions..."
-      onkeyup="searchProducts(this.value)">
+  type="text"
+  placeholder="Search gifts, emotions, occasions..."
+  onkeydown="handleSearch(event, this.value)">
+
   </div>
 
   <!-- RIGHT : MENU + CART -->

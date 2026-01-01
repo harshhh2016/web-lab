@@ -48,28 +48,23 @@
 </section>
 
 <!-- ================= CART CONTENT ================= -->
-<section>
-    <div class="cart-box">
+<section class="cart-section">
 
-        <!-- Empty cart message -->
-        <div id="emptyCartMessage" style="display:none; text-align:center;">
-            <h3>Your cart is empty</h3>
-            <p>
-                Looks like you haven’t added anything yet.
-                Explore our collections and find something special.
-            </p>
-            <a href="products.html" class="primary-btn">Browse Gifts</a>
-
-        </div>
-
-        <!-- Cart items -->
-        <section>
   <h2 class="section-title">Your Cart</h2>
 
-  <div id="emptyCartMessage" style="text-align:center; display:none;">
-    <p>Your cart is empty. Start adding gifts you love 💖</p>
+  <!-- Empty cart message -->
+  <div id="emptyCartMessage" style="display:none; text-align:center;">
+    <h3>Your cart is empty</h3>
+    <br>
+    <p>
+      Looks like you haven’t added anything yet.
+      Explore our collections and find something special.
+    </p>
+    <br>
+    <a href="products.html" class="primary-btn">Browse Gifts</a>
   </div>
 
+  <!-- Cart Content -->
   <div id="cartContent" class="cart-box">
     <div id="cartItems"></div>
 
@@ -77,12 +72,13 @@
       Total Amount: ₹<span id="total">0</span>
     </div>
 
-    <button class="checkout-btn" onclick="clearCart()">
-      Proceed to Checkout
-    </button>
-  </div>
-</section>
+    <button type="button" class="checkout-btn" onclick="clearCart()">
+  Proceed to Checkout
+</button>
 
+  </div>
+
+</section>
 
 <!-- ================= FOOTER ================= -->
 <footer style="background:#fff; padding:40px; text-align:center; margin-top:60px;">

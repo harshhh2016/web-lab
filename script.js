@@ -3,6 +3,39 @@
    ===================================================== */
 
 // Get cart from localStorage
+function updateQty(id, change) {
+  let cart = getCart();
+
+  const item = cart.find(i => i.id === id);
+  if (!item) return;
+
+  item.qty += change;
+
+  // Remove item if quantity becomes 0
+  if (item.qty <= 0) {
+    cart = cart.filter(i => i.id !== id);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  loadCart();
+}
+function clearCart() {
+  localStorage.setItem("cart", JSON.stringify([]));
+  updateCartCount();
+  alert("Thank you! Your order has been placed.");
+  window.location.href = "index.html";
+}
+
+
+function removeItem(id) {
+  let cart = getCart();
+  cart = cart.filter(i => i.id !== id);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  loadCart();
+}
+
 function getCart() {
     return JSON.parse(localStorage.getItem("cart")) || [];
 }
@@ -47,7 +80,7 @@ function searchProducts(query) {
    ADD TO CART + SHOW QUANTITY CONTROLS
    ===================================================== */
 
-function addProduct(button, name, price) {
+function addProduct(button, name, price, image) {
     let cart = getCart();
 
     const existingItem = cart.find(item => item.name === name);
@@ -55,7 +88,14 @@ function addProduct(button, name, price) {
     if (existingItem) {
         existingItem.qty += 1;
     } else {
-        cart.push({ name: name, price: price, qty: 1 });
+        cart.push({
+  id: Date.now(),        // ✅ REQUIRED
+  name: name,
+  price: price,
+  qty: 1,
+  image: image
+});
+
     }
 
     saveCart(cart);
@@ -103,90 +143,58 @@ function changeQty(btn, delta, name, price) {
    ===================================================== */
 
 function loadCart() {
-  function updateQty(id, change) {
-  let cart = getCart();
-  const item = cart.find(i => i.id === id);
-  if (!item) return;
+  const cart = getCart();
 
-  item.qty += change;
-  if (item.qty < 1) item.qty = 1;
+  const cartItemsDiv = document.getElementById("cartItems");
+  const totalSpan = document.getElementById("total");
+  const emptyMsg = document.getElementById("emptyCartMessage");
+  const cartContent = document.getElementById("cartContent");
 
-  localStorage.setItem("cart", JSON.stringify(cart));
-  loadCart();
-}
+  if (!cartItemsDiv) return;
 
-function removeItem(id) {
-  let cart = getCart();
-  cart = cart.filter(i => i.id !== id);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  loadCart();
-}
+  cartItemsDiv.innerHTML = "";
+  let total = 0;
 
-    const cart = getCart();
+  if (cart.length === 0) {
+    emptyMsg.style.display = "block";
+    cartContent.style.display = "none";
+    totalSpan.innerText = "0";
+    return;
+  }
 
-    const cartItemsDiv = document.getElementById("cartItems");
-    const totalSpan = document.getElementById("total");
-    const emptyMsg = document.getElementById("emptyCartMessage");
-    const cartContent = document.getElementById("cartContent");
+  emptyMsg.style.display = "none";
+  cartContent.style.display = "block";
 
-    if (!cartItemsDiv) return;
+  cart.forEach(item => {
+    if (!item.qty || isNaN(item.qty)) item.qty = 1;
 
-    cartItemsDiv.innerHTML = "";
-    let total = 0;
+    const subtotal = item.price * item.qty;
+    total += subtotal;
 
-    if (cart.length === 0) {
-        emptyMsg.style.display = "block";
-        cartContent.style.display = "none";
-        totalSpan.innerText = "0";
-        return;
-    }
+    cartItemsDiv.innerHTML += `
+      <div class="cart-item">
+        <img src="${item.image}" class="cart-img">
 
-    emptyMsg.style.display = "none";
-    cartContent.style.display = "block";
+        <div class="cart-details">
+          <h4>${item.name}</h4>
+          <p>Price: ₹${item.price}</p>
 
-    cart.forEach(item => {
-        // SAFETY CHECK
-        if (!item.qty || isNaN(item.qty)) item.qty = 1;
+          <div class="qty-controls">
+            <button onclick="updateQty(${item.id}, -1)">−</button>
+            <span>${item.qty}</span>
+            <button onclick="updateQty(${item.id}, 1)">+</button>
+          </div>
+        </div>
 
-        const subtotal = item.price * item.qty;
-        total += subtotal;
-
-        cartItemsDiv.innerHTML += `
-  <div class="cart-item">
-    <img src="${item.image}" class="cart-img">
-
-    <div class="cart-details">
-      <h4>${item.name}</h4>
-      <p>Price: ₹${item.price}</p>
-
-      <div class="qty-controls">
-        <button onclick="updateQty(${item.id}, -1)">−</button>
-        <span>${item.qty}</span>
-        <button onclick="updateQty(${item.id}, 1)">+</button>
+        <div class="cart-right">
+          <p class="cart-subtotal">₹${subtotal}</p>
+          <button class="remove-btn" onclick="removeItem(${item.id})">✕</button>
+        </div>
       </div>
-    </div>
+    `;
+  });
 
-    <div class="cart-right">
-      <p class="cart-subtotal">₹${item.price * item.qty}</p>
-      <button class="remove-btn" onclick="removeItem(${item.id})">✕</button>
-    </div>
-  </div>
-`;
-
-    });
-
-    totalSpan.innerText = total;
-}
-
-/* =====================================================
-   CHECKOUT – CLEAR CART
-   ===================================================== */
-
-function clearCart() {
-    localStorage.setItem("cart", JSON.stringify([]));
-    updateCartCount();
-    alert("Thank you! Your order has been placed.");
-    window.location.href = "index.html";
+  totalSpan.innerText = total;
 }
 
 
@@ -309,4 +317,47 @@ function downloadFeedback() {
 
     URL.revokeObjectURL(url);
 }
+let currentImages = [];
+let currentIndex = 0;
+
+function openModal(images, index = 0){
+  currentImages = images;
+  currentIndex = index;
+
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+
+  modal.style.display = "flex";
+  modalImg.src = currentImages[currentIndex];
+}
+
+function closeModal(){
+  document.getElementById("imageModal").style.display = "none";
+}
+
+function nextImage(){
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  document.getElementById("modalImage").src = currentImages[currentIndex];
+}
+
+function prevImage(){
+  currentIndex =
+    (currentIndex - 1 + currentImages.length) % currentImages.length;
+  document.getElementById("modalImage").src = currentImages[currentIndex];
+}
+function handleSearch(event, query) {
+  if (event.key === "Enter" && query.trim() !== "") {
+    window.location.href =
+      "products.html?search=" + encodeURIComponent(query);
+  }
+}
+window.addEventListener("load", () => {
+  const params = new URLSearchParams(window.location.search);
+  const searchQuery = params.get("search");
+
+  if (searchQuery && document.querySelector(".products")) {
+    searchProducts(searchQuery);
+  }
+});
+
 

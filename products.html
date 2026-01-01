@@ -19,9 +19,10 @@
   <!-- CENTER : SEARCH -->
   <div class="nav-center">
     <input
-      type="text"
-      placeholder="Search gifts, emotions, occasions..."
-      onkeyup="searchProducts(this.value)">
+  type="text"
+  placeholder="Search gifts, emotions, occasions..."
+  onkeydown="handleSearch(event, this.value)">
+
   </div>
 
   <!-- RIGHT : MENU + CART -->
@@ -58,7 +59,18 @@
 
 <!-- PRODUCT 1 -->
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f" alt="Birthday Gift Box">
+<img 
+  src="images/pro1.jpg"
+  class="clickable-image"
+  onclick="openModal([
+    'images/pro1.jpg',
+    'images/pro12.jpg',
+    'images/pro12.jpg'
+  ])"
+>
+
+
+
 <h4>Birthday Celebration Box</h4>
 <p>
 A joyful gift box filled with treats, greeting cards, and surprises
@@ -66,20 +78,28 @@ to make birthdays feel truly special.
 </p>
 <p class="price">₹999</p>
 
-<button onclick="addProduct(this,'Birthday Celebration Box',999)">
+<button onclick="addProduct(this,'Birthday Celebration Box',999,'images/pro1.jpg')">
 Add to Cart
 </button>
 
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Birthday Celebration Box',999)">−</button>
+<button onclick="changeQty(this,-1,'Birthday Celebration Box',999,'images/pro1.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Birthday Celebration Box',999)">+</button>
+<button onclick="changeQty(this,1,'Birthday Celebration Box',999,'images/pro1.jpg')">+</button>
 </div>
 </div>
 
 <!-- PRODUCT 2 -->
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52" alt="Chocolate Gift Box">
+<img 
+  src="images/pro2.jpg"
+  class="clickable-image"
+  onclick="openModal([
+    'images/pro2.jpg',
+    'images/pro22.jpg',
+    'images/pro22.jpg'
+  ])"
+>
 <h4>Chocolate Gift Hamper</h4>
 <p>
 A premium assortment of chocolates beautifully packed for sweet
@@ -87,20 +107,28 @@ birthday celebrations.
 </p>
 <p class="price">₹799</p>
 
-<button onclick="addProduct(this,'Chocolate Gift Hamper',799)">
+<button onclick="addProduct(this,'Chocolate Gift Hamper',799,'images/pro2.jpg')">
 Add to Cart
 </button>
 
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Chocolate Gift Hamper',799)">−</button>
+<button onclick="changeQty(this,-1,'Chocolate Gift Hamper',799,'images/pro2.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Chocolate Gift Hamper',799)">+</button>
+<button onclick="changeQty(this,1,'Chocolate Gift Hamper',799,'images/pro2.jpg')">+</button>
 </div>
 </div>
 
 <!-- PRODUCT 3 -->
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c" alt="Teddy Bear Gift">
+<img 
+  src="images/pro3.jpg"
+  class="clickable-image"
+  onclick="openModal([
+    'images/pro3.jpg',
+    'images/pro32.jpg',
+    'images/pro33.jpg'
+  ])"
+>
 <h4>Cute Teddy Bear</h4>
 <p>
 A soft plush teddy designed to express warmth, comfort, and affection
@@ -108,20 +136,28 @@ on special occasions.
 </p>
 <p class="price">₹599</p>
 
-<button onclick="addProduct(this,'Cute Teddy Bear',599)">
+<button onclick="addProduct(this,'Cute Teddy Bear',599,'images/pro3.jpg')">
 Add to Cart
 </button>
 
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Cute Teddy Bear',599)">−</button>
+<button onclick="changeQty(this,-1,'Cute Teddy Bear',599,'images/pro3.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Cute Teddy Bear',599)">+</button>
+<button onclick="changeQty(this,1,'Cute Teddy Bear',599,'images/pro3.jpg')">+</button>
 </div>
 </div>
 
 <!-- PRODUCT 4 -->
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1528756514091-dee5ecaa3278" alt="Birthday Mug">
+<img 
+  src="images/pro4.jpg"
+  class="clickable-image"
+  onclick="openModal([
+    'images/pro4.jpg',
+    'images/pro5.jpg',
+    'images/pro51.jpg'
+  ])"
+>
 <h4>Birthday Coffee Mug</h4>
 <p>
 A ceramic mug with cheerful birthday typography — perfect for daily
@@ -129,20 +165,28 @@ coffee moments.
 </p>
 <p class="price">₹349</p>
 
-<button onclick="addProduct(this,'Birthday Coffee Mug',349)">
+<button onclick="addProduct(this,'Birthday Coffee Mug',349,'images/pro4.jpg')">
 Add to Cart
 </button>
 
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Birthday Coffee Mug',349)">−</button>
+<button onclick="changeQty(this,-1,'Birthday Coffee Mug',349,'images/pro4.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Birthday Coffee Mug',349)">+</button>
+<button onclick="changeQty(this,1,'Birthday Coffee Mug',349,'images/pro4.jpg')">+</button>
 </div>
 </div>
 
 <!-- PRODUCT 5 -->
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf" alt="Birthday Balloon Set">
+<img 
+  src="images/pro52.jpg"
+  class="clickable-image"
+  onclick="openModal([
+    'images/pro52.jpg',
+    'images/pro53.jpg',
+    'images/pro53.jpg'
+  ])"
+>
 <h4>Balloon Decoration Kit</h4>
 <p>
 A colorful balloon decoration set to instantly transform any birthday
@@ -150,14 +194,14 @@ space into a celebration.
 </p>
 <p class="price">₹499</p>
 
-<button onclick="addProduct(this,'Balloon Decoration Kit',499)">
+<button onclick="addProduct(this,'Balloon Decoration Kit',499,'images/pro52.jpg')">
 Add to Cart
 </button>
 
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Balloon Decoration Kit',499)">−</button>
+<button onclick="changeQty(this,-1,'Balloon Decoration Kit',499,'images/pro52.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Balloon Decoration Kit',499)">+</button>
+<button onclick="changeQty(this,1,'Balloon Decoration Kit',499,'images/pro52.jpg')">+</button>
 </div>
 </div>
 
@@ -173,7 +217,16 @@ Add to Cart
 <div class="products">
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659" alt="Love Message Bottle">
+<img 
+  src="images/pro6.jpg"
+  class="clickable-image"
+  onclick="openModal([
+    'images/pro6.jpg',
+    'images/pro62.jpg',
+    'images/pro63.jpg',
+    'images/pro61.jpg'
+  ])"
+>
 <h4>Love Message Bottle</h4>
 <p>
 A decorative glass bottle filled with heartfelt love notes for your
@@ -181,16 +234,24 @@ special someone.
 </p>
 <p class="price">₹699</p>
 
-<button onclick="addProduct(this,'Love Message Bottle',699)">Add to Cart</button>
+<button onclick="addProduct(this,'Love Message Bottle',699,'images/pro6.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Love Message Bottle',699)">−</button>
+<button onclick="changeQty(this,-1,'Love Message Bottle',699,'images/pro6.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Love Message Bottle',699)">+</button>
+<button onclick="changeQty(this,1,'Love Message Bottle',699,'images/pro6.jpg')">+</button>
 </div>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1616627987039-3f47f3a6a90c" alt="Heart Cushion">
+<img 
+  src="images/pro7.jpg"
+  class="clickable-image"
+  onclick="openModal([
+    'images/pro7.jpg',
+    'images/pro72.jpg',
+    'images/pro73.jpg'
+  ])"
+>
 <h4>Heart Cushion</h4>
 <p>
 A soft heart-shaped cushion designed to add warmth and romance to any
@@ -198,16 +259,24 @@ space.
 </p>
 <p class="price">₹899</p>
 
-<button onclick="addProduct(this,'Heart Cushion',899)">Add to Cart</button>
+<button onclick="addProduct(this,'Heart Cushion',899,'images/pro7.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Heart Cushion',899)">−</button>
+<button onclick="changeQty(this,-1,'Heart Cushion',899,'images/pro7.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Heart Cushion',899)">+</button>
+<button onclick="changeQty(this,1,'Heart Cushion',899,'images/pro7.jpg')">+</button>
 </div>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1526045478516-99145907023c" alt="Rose Box">
+<img 
+  src="images/pro8.jpg"
+  class="clickable-image"
+  onclick="openModal([
+    'images/pro8.jpg',
+    'images/pro82.jpg',
+    'images/pro83.jpg'
+  ])"
+>
 <h4>Preserved Rose Box</h4>
 <p>
 A luxury preserved rose box symbolizing timeless love and lasting
@@ -215,16 +284,24 @@ memories.
 </p>
 <p class="price">₹1199</p>
 
-<button onclick="addProduct(this,'Preserved Rose Box',1199)">Add to Cart</button>
+<button onclick="addProduct(this,'Preserved Rose Box',1199,'images/pro8.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Preserved Rose Box',1199)">−</button>
+<button onclick="changeQty(this,-1,'Preserved Rose Box',1199,'images/pro8.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Preserved Rose Box',1199)">+</button>
+<button onclick="changeQty(this,1,'Preserved Rose Box',1199,'images/pro8.jpg')">+</button>
 </div>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" alt="Couple Bracelets">
+<img 
+  src="images/pro9.jpg"
+  class="clickable-image"
+  onclick="openModal([
+    'images/pro9.jpg',
+    'images/pro92.jpg',
+    'images/pro93.jpg'
+  ])"
+>
 <h4>Couple Bracelets</h4>
 <p>
 Matching bracelets representing connection, commitment, and shared
@@ -232,16 +309,24 @@ memories.
 </p>
 <p class="price">₹499</p>
 
-<button onclick="addProduct(this,'Couple Bracelets',499)">Add to Cart</button>
+<button onclick="addProduct(this,'Couple Bracelets',499,'images/pro9.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Couple Bracelets',499)">−</button>
+<button onclick="changeQty(this,-1,'Couple Bracelets',499,'images/pro9.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Couple Bracelets',499)">+</button>
+<button onclick="changeQty(this,1,'Couple Bracelets',499,'images/pro9.jpg')">+</button>
 </div>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Photo Frame">
+<img 
+  src="images/pro10.jpg"
+  class="clickable-image"
+  onclick="openModal([
+    'images/pro10.jpg',
+    'images/pro101.jpg',
+    'images/pro102.jpg'
+  ])"
+>
 <h4>Love Photo Frame</h4>
 <p>
 A beautifully designed frame to showcase your favorite memories
@@ -249,11 +334,11 @@ together.
 </p>
 <p class="price">₹799</p>
 
-<button onclick="addProduct(this,'Love Photo Frame',799)">Add to Cart</button>
+<button onclick="addProduct(this,'Love Photo Frame',799,'images/pro10.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Love Photo Frame',799)">−</button>
+<button onclick="changeQty(this,-1,'Love Photo Frame',799,'images/pro10.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Love Photo Frame',799)">+</button>
+<button onclick="changeQty(this,1,'Love Photo Frame',799,'images/pro10.jpg')">+</button>
 </div>
 </div>
 
@@ -270,82 +355,122 @@ together.
 <div class="products">
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1602872029708-84c4e7b2b3f1" alt="Scented Candle Set">
+<img 
+  src="images/pro11.jpg"
+  class="clickable-image"
+  onclick="openModal([
+    'images/pro11.jpg',
+    'images/pro111.jpg',
+    'images/pro112.jpg'
+  ])"
+>
 <h4>Scented Candle Set</h4>
 <p>
 A calming set of aromatic candles designed to create a cozy,
 peaceful, and relaxing atmosphere in any home.
 </p>
 <p class="price">₹699</p>
-<button onclick="addProduct(this,'Scented Candle Set',699)">Add to Cart</button>
+<button onclick="addProduct(this,'Scented Candle Set',699,'images/pro11.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Scented Candle Set',699)">−</button>
+<button onclick="changeQty(this,-1,'Scented Candle Set',699,'images/pro11.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Scented Candle Set',699)">+</button>
+<button onclick="changeQty(this,1,'Scented Candle Set',699,'images/pro11.jpg')">+</button>
 </div>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1543248939-4296e1fea89b" alt="Fairy Light Jar">
+<img 
+  src="images/pro122.jpg"
+  class="clickable-image"
+  onclick="openModal([
+    'images/pro122.jpg',
+    'images/pro121.jpg',
+    'images/pro123.jpg'
+  ])"
+>
 <h4>Fairy Light Jar</h4>
 <p>
 A glass jar filled with warm fairy lights that adds a dreamy
 glow to bedrooms and living spaces.
 </p>
 <p class="price">₹599</p>
-<button onclick="addProduct(this,'Fairy Light Jar',599)">Add to Cart</button>
+<button onclick="addProduct(this,'Fairy Light Jar',599,'images/pro122.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Fairy Light Jar',599)">−</button>
+<button onclick="changeQty(this,-1,'Fairy Light Jar',599,'images/pro122.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Fairy Light Jar',599)">+</button>
+<button onclick="changeQty(this,1,'Fairy Light Jar',599,'images/pro122.jpg')">+</button>
 </div>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4" alt="Minimal Wall Art">
+<<img 
+  src="images/pro131.jpg"
+  class="clickable-image"
+  onclick="openModal([
+    'images/pro131.jpg',
+    'images/pro132.jpg',
+    'images/pro133.jpg'
+  ])"
+>
 <h4>Minimal Wall Art</h4>
 <p>
 Elegant modern wall art that enhances interiors with subtle
 style and visual harmony.
 </p>
 <p class="price">₹899</p>
-<button onclick="addProduct(this,'Minimal Wall Art',899)">Add to Cart</button>
+<button onclick="addProduct(this,'Minimal Wall Art',899,'images/pro131.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Minimal Wall Art',899)">−</button>
+<button onclick="changeQty(this,-1,'Minimal Wall Art',899,'images/pro131.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Minimal Wall Art',899)">+</button>
+<button onclick="changeQty(this,1,'Minimal Wall Art',899,'images/pro131.jpg')">+</button>
 </div>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f" alt="Ceramic Vase">
+<img 
+  src="images/pro141.jpg"
+  class="clickable-image"
+  onclick="openModal([
+    'images/pro141.jpg',
+    'images/pro142.jpg',
+    'images/pro143.jpg'
+  ])"
+>
 <h4>Ceramic Flower Vase</h4>
 <p>
 A handcrafted ceramic vase that adds charm and sophistication
 to tables and shelves.
 </p>
 <p class="price">₹1099</p>
-<button onclick="addProduct(this,'Ceramic Flower Vase',1099)">Add to Cart</button>
+<button onclick="addProduct(this,'Ceramic Flower Vase',1099,'images/pro141.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Ceramic Flower Vase',1099)">−</button>
+<button onclick="changeQty(this,-1,'Ceramic Flower Vase',1099,'images/pro141.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Ceramic Flower Vase',1099)">+</button>
+<button onclick="changeQty(this,1,'Ceramic Flower Vase',1099,'images/pro141.jpg')">+</button>
 </div>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" alt="Table Lamp">
+<img 
+  src="images/pro151.jpg"
+  class="clickable-image"
+  onclick="openModal([
+    'images/pro151.jpg',
+    'images/pro152.jpg',
+    'images/pro153.jpg'
+  ])"
+>
 <h4>Decorative Table Lamp</h4>
 <p>
 A stylish table lamp providing warm lighting perfect for
 relaxed evenings and reading corners.
 </p>
 <p class="price">₹1299</p>
-<button onclick="addProduct(this,'Decorative Table Lamp',1299)">Add to Cart</button>
+<button onclick="addProduct(this,'Decorative Table Lamp',1299,'images/pro151.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Decorative Table Lamp',1299)">−</button>
+<button onclick="changeQty(this,-1,'Decorative Table Lamp',1299,'images/pro151.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Decorative Table Lamp',1299)">+</button>
+<button onclick="changeQty(this,1,'Decorative Table Lamp',1299,'images/pro151.jpg')">+</button>
 </div>
 </div>
 
@@ -360,82 +485,122 @@ relaxed evenings and reading corners.
 <div class="products">
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1585386959984-a41552231691" alt="Name Mug">
-<h4>Personalized Name Mug</h4>
+<img 
+  src="images/pro171.jpg"
+  class="clickable-image"
+  onclick="openModal([
+    'images/pro171.jpg',
+    'images/pro172.jpg',
+    'images/pro173.jpg'
+  ])"
+>
+<h4>Personalized Photo Mug</h4>
 <p>
-A custom ceramic mug printed with a name or message,
+A custom ceramic mug printed with a photo,
 perfect for everyday use.
 </p>
 <p class="price">₹399</p>
-<button onclick="addProduct(this,'Personalized Name Mug',399)">Add to Cart</button>
+<button onclick="addProduct(this,'Personalized Name Mug',399,'images/pro171.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Personalized Name Mug',399)">−</button>
+<button onclick="changeQty(this,-1,'Personalized Name Mug',399,'images/pro171.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Personalized Name Mug',399)">+</button>
+<button onclick="changeQty(this,1,'Personalized Name Mug',399,'images/pro171.jpg')">+</button>
 </div>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1616627987039-3f47f3a6a90c" alt="Custom Cushion">
-<h4>Custom Photo Cushion</h4>
+<img
+    src="images/pro161.jpg"
+    class="clickable-image"
+    onclick="openModal([
+      'images/pro161.jpg',
+      'images/pro162.jpg',
+      'images/pro163.jpg'
+    ])"
+  >
+<h4>Customized Leather Wallet Gift</h4>
 <p>
-A soft cushion printed with your favorite photo,
-turning memories into comfort.
+This 4-piece set includes a leather wallet Hamper
+customized with name and charm.
 </p>
 <p class="price">₹899</p>
-<button onclick="addProduct(this,'Custom Photo Cushion',899)">Add to Cart</button>
+<button onclick="addProduct(this,'Customized Leather Wallet Gift',899,'images/pro161.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Custom Photo Cushion',899)">−</button>
+<button onclick="changeQty(this,-1,'Customized Leather Wallet Gift',899,'images/pro161.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Custom Photo Cushion',899)">+</button>
+<button onclick="changeQty(this,1,'Customized Leather Wallet Gift',899,'images/pro161.jpg')">+</button>
 </div>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Custom Frame">
+<img
+    src="images/pro181.jpg"
+    class="clickable-image"
+    onclick="openModal([
+      'images/pro181.jpg',
+      'images/pro182.jpg',
+      'images/pro183.jpg'
+    ])"
+  >
 <h4>Personalized Photo Frame</h4>
 <p>
 A customized photo frame engraved with names or dates,
 perfect for special memories.
 </p>
 <p class="price">₹799</p>
-<button onclick="addProduct(this,'Personalized Photo Frame',799)">Add to Cart</button>
+<button onclick="addProduct(this,'Personalized Photo Frame',799,'images/pro181.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Personalized Photo Frame',799)">−</button>
+<button onclick="changeQty(this,-1,'Personalized Photo Frame',799,'images/pro181.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Personalized Photo Frame',799)">+</button>
+<button onclick="changeQty(this,1,'Personalized Photo Frame',799,'images/pro181.jpg')">+</button>
 </div>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" alt="Engraved Keychain">
+<img
+    src="images/pro191.jpg"
+    class="clickable-image"
+    onclick="openModal([
+      'images/pro191.jpg',
+      'images/pro192.jpg',
+      'images/pro193.jpg'
+    ])"
+  >
 <h4>Engraved Keychain</h4>
 <p>
 A sleek metal keychain engraved with initials or a short
 message for daily use.
 </p>
 <p class="price">₹299</p>
-<button onclick="addProduct(this,'Engraved Keychain',299)">Add to Cart</button>
+<button onclick="addProduct(this,'Engraved Keychain',299,'images/pro191.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Engraved Keychain',299)">−</button>
+<button onclick="changeQty(this,-1,'Engraved Keychain',299,'images/pro191.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Engraved Keychain',299)">+</button>
+<button onclick="changeQty(this,1,'Engraved Keychain',299,'images/pro191.jpg')">+</button>
 </div>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf" alt="Custom Gift Box">
-<h4>Customized Memory Box</h4>
+<img
+    src="images/pro201.jpg"
+    class="clickable-image"
+    onclick="openModal([
+      'images/pro201.jpg',
+      'images/pro202.jpg',
+      'images/pro203.jpg'
+    ])"
+  >
+<h4> DIY Photo Album Kit 52 Sheets</h4>
 <p>
-A personalized gift box designed to store letters, photos,
-and cherished keepsakes.
+Perfect for preserving family milestones,vacations,
+or celebrations such as weddings and birthdays. 
 </p>
 <p class="price">₹1199</p>
-<button onclick="addProduct(this,'Customized Memory Box',1199)">Add to Cart</button>
+<button onclick="addProduct(this,'DIY Photo Album Kit 52 Sheets',1199,'images/pro201.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Customized Memory Box',1199)">−</button>
+<button onclick="changeQty(this,-1,'DIY Photo Album Kit 52 Sheets',1199,'images/pro201.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Customized Memory Box',1199)">+</button>
+<button onclick="changeQty(this,1,'DIY Photo Album Kit 52 Sheets',1199,'images/pro201.jpg')">+</button>
 </div>
 </div>
 
@@ -450,82 +615,122 @@ and cherished keepsakes.
 <div class="products">
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" alt="Essential Oil Set">
+<img
+    src="images/pro211.jpg"
+    class="clickable-image"
+    onclick="openModal([
+      'images/pro211.jpg',
+      'images/pro212.jpg',
+      'images/pro213.jpg'
+    ])"
+  >
 <h4>Essential Oil Set</h4>
 <p>
 A calming set of essential oils designed for relaxation,
 stress relief, and mindfulness.
 </p>
 <p class="price">₹899</p>
-<button onclick="addProduct(this,'Essential Oil Set',899)">Add to Cart</button>
+<button onclick="addProduct(this,'Essential Oil Set',899,'images/pro211.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Essential Oil Set',899)">−</button>
+<button onclick="changeQty(this,-1,'Essential Oil Set',899,'images/pro211.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Essential Oil Set',899)">+</button>
+<button onclick="changeQty(this,1,'Essential Oil Set',899,'images/pro211.jpg')">+</button>
 </div>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1585386959984-a41552231691" alt="Herbal Tea Kit">
+<img
+    src="images/pro221.jpg"
+    class="clickable-image"
+    onclick="openModal([
+      'images/pro221.jpg',
+      'images/pro222.jpg',
+      'images/pro223.jpg'
+    ])"
+  >
 <h4>Herbal Tea Gift Kit</h4>
 <p>
 A soothing collection of herbal teas curated for relaxation
 and wellness.
 </p>
 <p class="price">₹699</p>
-<button onclick="addProduct(this,'Herbal Tea Gift Kit',699)">Add to Cart</button>
+<button onclick="addProduct(this,'Herbal Tea Gift Kit',699,'images/pro221.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Herbal Tea Gift Kit',699)">−</button>
+<button onclick="changeQty(this,-1,'Herbal Tea Gift Kit',699,'images/pro221.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Herbal Tea Gift Kit',699)">+</button>
+<button onclick="changeQty(this,1,'Herbal Tea Gift Kit',699,'images/pro221.jpg')">+</button>
 </div>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1602872029708-84c4e7b2b3f1" alt="Bath Spa Set">
+<img
+    src="images/pro231.jpg"
+    class="clickable-image"
+    onclick="openModal([
+      'images/pro231.jpg',
+      'images/pro232.jpg',
+      'images/pro233.jpg'
+    ])"
+  >
 <h4>Luxury Bath Spa Set</h4>
 <p>
 A complete self-care spa kit with bath salts, scrubs,
 and aromatherapy essentials.
 </p>
 <p class="price">₹1299</p>
-<button onclick="addProduct(this,'Luxury Bath Spa Set',1299)">Add to Cart</button>
+<button onclick="addProduct(this,'Luxury Bath Spa Set',1299,'images/pro231.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Luxury Bath Spa Set',1299)">−</button>
+<button onclick="changeQty(this,-1,'Luxury Bath Spa Set',1299,'images/pro231.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Luxury Bath Spa Set',1299)">+</button>
+<button onclick="changeQty(this,1,'Luxury Bath Spa Set',1299,'images/pro231.jpg')">+</button>
 </div>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f" alt="Yoga Mat">
+<img
+    src="images/pro241.jpg"
+    class="clickable-image"
+    onclick="openModal([
+      'images/pro241.jpg',
+      'images/pro242.jpg',
+      'images/pro243.jpg'
+    ])"
+  >
 <h4>Eco Yoga Mat</h4>
 <p>
 An eco-friendly yoga mat designed for comfort, grip,
 and mindful practice.
 </p>
 <p class="price">₹999</p>
-<button onclick="addProduct(this,'Eco Yoga Mat',999)">Add to Cart</button>
+<button onclick="addProduct(this,'Eco Yoga Mat',999,'images/pro241.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Eco Yoga Mat',999)">−</button>
+<button onclick="changeQty(this,-1,'Eco Yoga Mat',999,'images/pro241.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Eco Yoga Mat',999)">+</button>
+<button onclick="changeQty(this,1,'Eco Yoga Mat',999,'images/pro241.jpg')">+</button>
 </div>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1543248939-4296e1fea89b" alt="Aroma Diffuser">
+<img
+    src="images/pro251.jpg"
+    class="clickable-image"
+    onclick="openModal([
+      'images/pro251.jpg',
+      'images/pro252.jpg',
+      'images/pro253.jpg'
+    ])"
+  >
 <h4>Aroma Diffuser</h4>
 <p>
 A modern aroma diffuser that spreads calming fragrances
 and enhances relaxation.
 </p>
 <p class="price">₹1499</p>
-<button onclick="addProduct(this,'Aroma Diffuser',1499)">Add to Cart</button>
+<button onclick="addProduct(this,'Aroma Diffuser',1499,'images/pro251.jpg')">Add to Cart</button>
 <div class="qty-controls" style="display:none;">
-<button onclick="changeQty(this,-1,'Aroma Diffuser',1499)">−</button>
+<button onclick="changeQty(this,-1,'Aroma Diffuser',1499,'images/pro251.jpg')">−</button>
 <span>1</span>
-<button onclick="changeQty(this,1,'Aroma Diffuser',1499)">+</button>
+<button onclick="changeQty(this,1,'Aroma Diffuser',1499,'images/pro251.jpg')">+</button>
 </div>
 </div>
 
@@ -538,6 +743,15 @@ and enhances relaxation.
 <p><strong>HeartStrings</strong> © 2025</p>
 <p>Where every gift speaks your feelings.</p>
 </footer>
+<!-- IMAGE LIGHTBOX MODAL -->
+<div id="imageModal" class="image-modal">
+  <span class="close-modal" onclick="closeModal()">×</span>
+  <img id="modalImage" class="modal-img">
+
+  <button class="nav-btn left" onclick="prevImage()">❮</button>
+  <button class="nav-btn right" onclick="nextImage()">❯</button>
+</div>
+
 
 </body>
 </html>
