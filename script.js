@@ -89,7 +89,7 @@ function addProduct(button, name, price, image) {
         existingItem.qty += 1;
     } else {
         cart.push({
-  id: Date.now(),        // ✅ REQUIRED
+  id: Date.now(),        
   name: name,
   price: price,
   qty: 1,
@@ -170,6 +170,7 @@ function loadCart() {
 
     const subtotal = item.price * item.qty;
     total += subtotal;
+    
 
     cartItemsDiv.innerHTML += `
       <div class="cart-item">
@@ -192,6 +193,7 @@ function loadCart() {
         </div>
       </div>
     `;
+    
   });
 
   totalSpan.innerText = total;
@@ -288,35 +290,7 @@ function downloadFeedback() {
 
     URL.revokeObjectURL(url);
 }
-function downloadFeedback() {
-    const feedbackList = JSON.parse(localStorage.getItem("feedbackList")) || [];
 
-    if (feedbackList.length === 0) {
-        alert("No feedback available to download.");
-        return;
-    }
-
-    let textContent = "HeartStrings - Customer Feedback\n\n";
-
-    feedbackList.forEach((fb, index) => {
-        textContent += `Feedback ${index + 1}\n`;
-        textContent += `Name: ${fb.name}\n`;
-        textContent += `Email: ${fb.email}\n`;
-        textContent += `Message: ${fb.message}\n`;
-        textContent += `Time: ${fb.time}\n`;
-        textContent += `-----------------------------\n\n`;
-    });
-
-    const blob = new Blob([textContent], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "feedback.txt";
-    a.click();
-
-    URL.revokeObjectURL(url);
-}
 let currentImages = [];
 let currentIndex = 0;
 
@@ -391,7 +365,7 @@ function validateFeedback() {
 
   // Save feedback
   saveFeedbackData(name, email, phone, message);
-   downloadFeedback(name, email, phone, message);
+  downloadFeedback(name, email, phone, message);
 
 alert("Thank you for your feedback!");
 document.getElementById("feedbackForm").reset();
@@ -411,6 +385,67 @@ function saveFeedbackData(name, email, phone, message) {
 
   localStorage.setItem("feedbackList", JSON.stringify(feedbackList));
 }
+function validateForm2() {
+
+  var email2 = document.getElementById("email2").value.trim();
+  var mobile2 = document.getElementById("mobile2").value.trim();
+  var feedback2 = document.getElementById("feedback2").value.trim();
+
+  // Email validation
+  if (email2 === "") {
+    alert("Email cannot be empty");
+    return false;
+  }
+
+  if (email2.indexOf("@") === -1 || email2.indexOf(".") === -1) {
+    alert("Please enter a valid email address");
+    return false;
+  }
+
+  // Mobile validation
+  if (mobile2 === "") {
+    alert("Mobile number cannot be empty");
+    return false;
+  }
+
+  if (isNaN(mobile2)) {
+    alert("Mobile number must contain only digits");
+    return false;
+  }
+
+  if (mobile2.length !== 10) {
+    alert("Mobile number must be exactly 10 digits");
+    return false;
+  }
+
+  // Feedback text validation
+  if (feedback2 === "") {
+    alert("Feedback cannot be empty");
+    return false;
+  }
+
+  if (feedback2.length < 10) {
+    alert("Feedback must contain at least 10 characters");
+    return false;
+  }
+
+  alert("Feedback submitted successfully");
+  return true;
+}
+function toggleOffers() {
+  const section = document.getElementById("Offers");
+
+  if (section.style.display === "none") {
+    section.style.display = "block";
+  } else {
+    section.style.display = "none";
+  }
+}
+
+
+
+
+
 
 
 
